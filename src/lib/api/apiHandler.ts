@@ -1,3 +1,4 @@
+import { cmd } from "./listApi/cmd";
 import { createSusApp } from "./listApi/createSusApp";
 import { deleteSusApp } from "./listApi/deleteSusApp";
 import { listSusApp } from "./listApi/listSusApp";
@@ -20,6 +21,12 @@ const listApi = [
     path: "/delete/sus-app",
     api: deleteSusApp,
     method: "POST",
+  },
+  {
+    name: "cmd",
+    path: "/cmd",
+    api: cmd,
+    method: "GET",
   },
 ];
 
