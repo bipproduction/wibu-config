@@ -1,11 +1,25 @@
+import { createSusApp } from "./listApi/createSusApp";
+import { deleteSusApp } from "./listApi/deleteSusApp";
 import { listSusApp } from "./listApi/listSusApp";
 
 const listApi = [
   {
     name: "list-sus-app",
     path: "/list/sus-app",
-    lib: listSusApp,
+    api: listSusApp,
     method: "GET",
+  },
+  {
+    name: "create-sus-app",
+    path: "/create/sus-app",
+    api: createSusApp,
+    method: "POST",
+  },
+  {
+    name: "delete-sus-app",
+    path: "/delete/sus-app",
+    api: deleteSusApp,
+    method: "POST",
   },
 ];
 
@@ -23,5 +37,5 @@ export async function apiHandler(
     return new Response(`Not found | ${paramsPath}`, { status: 404 });
   }
 
-  return lib.lib(req);
+  return lib.api(req);
 }

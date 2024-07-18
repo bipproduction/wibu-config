@@ -1,0 +1,1 @@
+export { pageHandler as default } from "@/lib/page/pageHandler";
